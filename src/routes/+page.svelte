@@ -1,20 +1,16 @@
-
 <div class="flex flex-col gap-20">
-	<div class="flex flex-row">
-		<img src="logo.svg" alt="">
-	</div>
 
 	<div class="flex flex-row justify-center">
 			<h1 class="text-4xl font-bold text-[#19231A]">Get Started</h1>
 	</div>
 
 	<div class="flex flex-row justify-center gap-20 text-secondary font-bold">
-		<button class="border-[1px] px-4 py-3 border-[#19231A] rounded-[5px] flex flex-row items-center gap-4 group hover:bg-secondary">
+		<a href="/speech" class="border-[1px] px-4 py-3 border-[#19231A] rounded-[5px] flex flex-row items-center gap-4 group hover:bg-secondary">
 			<span class="group-hover:text-white">Use speech-to-text</span>
 				<svg width="25" height="37" viewBox="0 0 25 37" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M23.8636 13.875H22.7273C22.0994 13.875 21.5909 14.3924 21.5909 15.0312V18.5C21.5909 23.9055 17.0107 28.2429 11.5916 27.7052C6.86861 27.2362 3.40909 22.9162 3.40909 18.0881V15.0312C3.40909 14.3924 2.90057 13.875 2.27273 13.875H1.13636C0.508523 13.875 0 14.3924 0 15.0312V17.9334C0 24.4113 4.54332 30.1861 10.7955 31.0634V33.5312H6.81818C6.19034 33.5312 5.68182 34.0487 5.68182 34.6875V35.8438C5.68182 36.4826 6.19034 37 6.81818 37H18.1818C18.8097 37 19.3182 36.4826 19.3182 35.8438V34.6875C19.3182 34.0487 18.8097 33.5312 18.1818 33.5312H14.2045V31.0908C20.2919 30.241 25 24.9244 25 18.5V15.0312C25 14.3924 24.4915 13.875 23.8636 13.875ZM12.5 25.4375C16.2656 25.4375 19.3182 22.3315 19.3182 18.5H13.2578C12.8395 18.5 12.5 18.2413 12.5 17.9219V16.7656C12.5 16.4462 12.8395 16.1875 13.2578 16.1875H19.3182V13.875H13.2578C12.8395 13.875 12.5 13.6163 12.5 13.2969V12.1406C12.5 11.8212 12.8395 11.5625 13.2578 11.5625H19.3182V9.25H13.2578C12.8395 9.25 12.5 8.99129 12.5 8.67188V7.51562C12.5 7.19621 12.8395 6.9375 13.2578 6.9375H19.3182C19.3182 3.10598 16.2656 0 12.5 0C8.73437 0 5.68182 3.10598 5.68182 6.9375V18.5C5.68182 22.3315 8.73437 25.4375 12.5 25.4375Z" fill="#0A1A50" class="group-hover:fill-white"/>
 			</svg>
-		</button>
+		</a>
 
 		<button class="border-[1px] px-4 py-3 border-[#19231A] rounded-[5px] flex flex-row items-center gap-4 group hover:bg-secondary">
 			<span class="group-hover:text-white">Type a prompt</span>

@@ -6,7 +6,6 @@ const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 
 export const actions: Actions = {
 	default: async (event) => {
-		console.log(OPENAI_API_KEY)
 		// TODO log the user in
 		if (!OPENAI_API_KEY)
 			return {}

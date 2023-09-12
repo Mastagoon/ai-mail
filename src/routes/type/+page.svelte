@@ -2,6 +2,7 @@
   import { slide} from "svelte/transition";
   import { onMount } from 'svelte';
 	import { enhance } from '$app/forms';
+	import Loading from "../../components/Loading.svelte";
 
 	export let form
 	let isLoading = false;
@@ -16,14 +17,14 @@
 		<h1 class="text-2xl font-bold capitalize">Write an email prompt</h1>
 	</div>
 	<form method="POST" class="flex flex-col gap-4" use:enhance={() => {
+		isLoading = true
 		return async ({ update }) => {
-			isLoading = true
 			await update({ reset: false });
 			isLoading = false
 		};
 	}}>
 			<div class="flex flex-col gap-1">
-				<label class="text-lg " for="context">Context</label>
+				<label class="text-lg " for="context">{isLoading}</label>
 				<textarea 
 					value="This is a business email, you are the CEO of a company"
 					name="context" class="bg-[#D9D9D9] rounded-sm resize-none p-4" rows={2}></textarea>
@@ -44,7 +45,7 @@
 </div>
 
 {#if isLoading}
-		<span>Loading...</span>
+		<Loading/>
 {/if}
 {#if form?.error}
 	<p in:slide={{duration:500}} class="text-red-500 text-center">{form?.error}</p>

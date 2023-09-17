@@ -6,19 +6,20 @@
 
 	export let form
 	let isLoading = false;
+	let result:string | null | undefined;
+	$: result= form?.result;
 
   let ready = false;
   onMount(() => ready = true);
 
 	let  formRef: HTMLFormElement;
 
-	const handleSend = () => {
-
-	}
 </script>
 
 {#if ready}
+
 <div 
+		in:slide={{duration:500}} out:slide={{duration:500}}
 		on:keypress={e => {
 			if (e.key === "Enter" && e.ctrlKey) {
 				formRef.requestSubmit()
@@ -44,11 +45,15 @@
 					name="context" class="bg-[#D9D9D9] rounded-sm resize-none p-4" rows={2}></textarea>
 			</div>
 
-		<span>Prompt</span>
+		<span class="text-lg">Prompt:</span>
 		<textarea name="prompt" class="bg-[#D9D9D9] rounded-sm resize-none p-4" rows={6}></textarea>
 {#if form?.result}
-			<span>Response:</span>
-		<textarea value={form?.result??""} name="response" class="bg-[#D9D9D9] rounded-sm resize-none p-4" rows={12}></textarea>
+			<span class="text-lg">Response:</span>
+		<textarea 
+					in:slide={{duration:500}} 
+					value={result}
+					on:change={e => result = e.currentTarget.value}
+					name="response" class="bg-[#D9D9D9] rounded-sm resize-none p-4" rows={12}></textarea>
 {/if}
 		<div class="flex flex-row justify-center gap-8 ">
 			<button
@@ -58,13 +63,13 @@
 					{form?.result ? "Regenerate" : "Generate"}
 			</button>
 {#if form?.result}
-		<button
-			on:click={handleSend}
-			type="submit" class="border-[1px] px-4 py-3 border-[#19231A] rounded-[5px] flex 
+		<a
+			href={`mailto:?subject=&body=${encodeURIComponent(result??"")}`}
+			class="border-[1px] px-4 py-3 border-[#19231A] rounded-[5px] flex 
 			hover:text-white
 			flex-row items-center gap-4 hover:bg-secondary">
 				Send mail
-		</button>
+		</a>
 {/if}
 		</div>
 	</form>

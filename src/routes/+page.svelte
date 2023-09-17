@@ -1,5 +1,15 @@
+<script>
+  import { onMount } from "svelte";
+	import { fade } from "svelte/transition";
+	let ready = false
+  onMount(() => ready = true);
+</script>
 
-<div class="flex flex-col gap-20">
+{#if ready}
+<div 
+	in:fade={{duration: 500}}
+	out:fade={{duration: 500}}
+	class="flex flex-col gap-20">
 
 	<div class="flex flex-row justify-center">
 			<h1 class="text-4xl font-bold text-[#19231A]">Get Started</h1>
@@ -24,3 +34,5 @@
 	</div>
 
 </div>
+
+{/if}

@@ -18,7 +18,12 @@
   let ready = false;
 	let is_recording = false;
 	let result:string | null | undefined;
+	let context = localStorage.getItem("context") ?? "This is a business email. I am the head of HR of the company ABC";
 	$: result= form?.result;
+
+	const onSaveContext = (val: string) => {
+		localStorage.setItem("context", val);
+	}
 
 	const client = new BrowserClient({
 		appId: '60a83715-9ecc-406c-aad1-eb2a603b47b2',
@@ -105,7 +110,8 @@
 					bind:this={segmantsHolder}
 					 class="w-full"></div>
 				<textarea 
-					value="This is a business email, you are the CEO of a company"
+					bind:value={context}
+					on:blur={(e) => onSaveContext(e.currentTarget.value)}
 					name="context" class="bg-[#D9D9D9] rounded-sm resize-none p-4" rows={2}></textarea>
 			</div>
 

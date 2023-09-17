@@ -12,7 +12,13 @@
   let ready = false;
   onMount(() => ready = true);
 
-	let  formRef: HTMLFormElement;
+	let formRef: HTMLFormElement;
+
+	let context = localStorage.getItem("context") ?? "This is a business email. I am the head of HR of the company ABC";
+
+	const onSaveContext = (val: string) => {
+		localStorage.setItem("context", val);
+	}
 
 </script>
 
@@ -41,7 +47,8 @@
 			<div class="flex flex-col gap-1">
 				<label class="text-lg " for="context">Context</label>
 				<textarea 
-					value="This is a business email, you are the CEO of a company"
+					bind:value={context}
+					on:blur={(e) => onSaveContext(e.currentTarget.value)}
 					name="context" class="bg-[#D9D9D9] rounded-sm resize-none p-4" rows={2}></textarea>
 			</div>
 

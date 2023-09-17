@@ -2,6 +2,8 @@ import type { Actions } from "@sveltejs/kit";
 import { OPENAI_API_KEY } from "$env/static/private"
 import { OpenAI } from "openai";
 
+export const ssr = false;
+
 const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 
 export const actions: Actions = {

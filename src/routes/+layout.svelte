@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>AI Mail</title>
+	<title>AI Mail | Home</title>
 </svelte:head>
 
 <div class="container mx-auto my-2 h-full w-full">

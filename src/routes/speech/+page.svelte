@@ -7,7 +7,7 @@
 	import Loading from "../../components/Loading.svelte";
 	import { enhance } from '$app/forms';
 
-	const microphone = new BrowserMicrophone();
+	let microphone: BrowserMicrophone;
 
 	let formRef: HTMLFormElement;
 	let transcripts: HTMLTextAreaElement;
@@ -64,6 +64,7 @@
 
 	onMount(() => {
 		ready = true;
+		microphone = new BrowserMicrophone();
 	});
 
 </script>

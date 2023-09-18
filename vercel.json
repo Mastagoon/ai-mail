@@ -1,0 +1,10 @@
+{
+	"functions": {
+		"/speech": {
+			"maxDuration": 60
+		},
+		"/type": {
+			"maxDuration": 60
+		}
+	}
+}

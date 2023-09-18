@@ -1,10 +1,10 @@
 {
 	"functions": {
 		"/speech": {
-			"maxDuration": 60
+			"maxDuration": 30
 		},
 		"/type": {
-			"maxDuration": 60
+			"maxDuration": 30
 		}
 	}
 }
